@@ -1,0 +1,72 @@
+page{
+	background-color:$gray-color; 
+	font-family: $primary-font-family;
+	font-size:12px;
+}
+
+page>view{
+	box-sizing: border-box;
+	padding-left:10rpx;
+	padding-right:10rpx;
+}
+.content-section{
+	background-color:white;
+	border-radius: 5rpx;
+}
+
+.play-list-wrap{
+	padding-top:20rpx;
+	.play-list-header{
+		padding:10rpx 0;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+.play-list-title{
+	font-size:$uni-font-size-lg;
+	font-weight:700;
+}
+.plat-list-component{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-row-gap: 20rpx;
+	grid-column-gap: 10rpx;
+	.list-item{
+		width:100%;
+		position: relative;
+		image{
+			width:100%;
+			border-radius: 20rpx;
+		}
+		.play-count{
+			position:absolute;
+			top:10rpx;
+			right:10rpx;
+			color:white;
+			font-size:10px;
+			background-color:rgba(255,255,255,.1);
+			padding:3rpx 12rpx;
+			border-radius: 12px;
+		}
+		.title{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp:2;
+			-webkit-box-orient:vertical;
+		}
+	}
+}
+ 
+.uni-scroll-view-content{
+	display: flex;
+}
+
+.iconfont{
+	/* #ifdef MP-WEIXIN */
+	font-size:24rpx;
+	/* #endif */
+	/* #ifndef MP-WEIXIN */
+	font-size:12rpx;
+	/* #endif */
+}

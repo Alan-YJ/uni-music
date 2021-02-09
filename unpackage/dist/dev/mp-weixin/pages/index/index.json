@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "recommend-play-list": "/pages/index/components/RecommendPlayList",
+    "song-list-align": "/pages/index/components/SongListAlign",
+    "plat-list": "/components/PlayListFunctional",
+    "radius-link": "/components/RadiusLink"
+  }
+}

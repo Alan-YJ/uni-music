@@ -1,0 +1,1 @@
+<view class="plat-list-component"><block wx:for="{{props.list}}" wx:for-item="item" wx:for-index="__i0__"><view class="list-item"><image class="list-image" mode="widthFix" src="{{item.picUrl}}"></image><view class="play-count">{{item.playCount}}</view><view class="title">{{item.name}}</view></view></block></view>

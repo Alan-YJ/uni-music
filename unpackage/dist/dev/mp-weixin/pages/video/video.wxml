@@ -1,0 +1,1 @@
+<view class="video-page"><view class="tabs-wrap"><view class="{{['tab-header',active==1?'actived':'']}}">听听</view><view class="{{['tab-header',active==2?'actived':'']}}">推荐</view><view class="{{['tab-header',active==3?'actived':'']}}">分类</view></view></view>

@@ -1,0 +1,9 @@
+
+.radius-btn.data-v-77c02547{
+	padding:7rpx 14rpx 5rpx 16rpx;
+	border:1px solid rgba(200,200,200,.5);
+	border-radius: 30rpx;
+	display: inline-block;
+	box-shadow: 1rpx 1rpx #999999;
+}
+
