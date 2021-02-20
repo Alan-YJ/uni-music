@@ -9,14 +9,14 @@
 				<text>{{subTitle}}</text>
 			</view>
 			<view>
-				<RadiusLink>
+				<radius-link>
 					<template #text>
 						<view>
 							<text class="iconfont iconbofang1"></text>
 							播放
 						</view>
 					</template>
-				</RadiusLink>
+				</radius-link>
 			</view>
 		</view>
 		<scroll-view scroll-x="true" >

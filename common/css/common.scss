@@ -6,8 +6,6 @@ page{
 
 page>view{
 	box-sizing: border-box;
-	padding-left:10rpx;
-	padding-right:10rpx;
 }
 .content-section{
 	background-color:white;
@@ -69,4 +67,18 @@ page>view{
 	/* #ifndef MP-WEIXIN */
 	font-size:12rpx;
 	/* #endif */
+}
+
+.divider{
+	border-color:$gray-color;
+	border-width: 1rpx;
+	border-style: solid;
+	&.divider-horizontal{
+	}
+}
+
+.text-nowrap{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }

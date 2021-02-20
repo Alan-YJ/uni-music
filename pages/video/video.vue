@@ -1,36 +1,57 @@
 <template>
-	<view class='video-page'>
-		<view class="tabs-wrap">
-			<view class='tab-header' :class='active == 1?"actived":""'>听听</view>
-			<view class='tab-header' :class='active == 2?"actived":""'>推荐</view>
-			<view class='tab-header' :class='active == 3?"actived":""'>分类</view>
-		</view>
+	<view class="video-component">
+		<scroll-view scroll-y="true" class="video-list" @refresherpulling='refresherpulling'>
+			<list-video-item v-for='item in list' :key='item.id' :item='item'></list-video-item>
+		</scroll-view>
 	</view>
 </template>
 
 <script>
+	import {
+		getRecommendMv
+	} from '@/apis/videopage/index.js'
+	import ListVideoItem from './components/ListVideoItem.vue'
 	export default {
+		components: {
+			ListVideoItem
+		},
 		data() {
 			return {
-				active:1
+				list: [],
+				pagination: {
+					page: 1,
+					limit: 20
+				}
 			}
 		},
+		mounted() {
+			this.loadList()
+		},
 		methods: {
-			
+			loadList() {
+				return getRecommendMv(this.pagination).then(res => {
+					this.list = res.result
+				})
+			},
+			//下拉
+			refresherpulling(e){
+				this.pagination = {
+					page: 1,
+					limit: 20
+				}
+				this.loadList()
+				console.info(e)
+			}
 		}
 	}
 </script>
 
-<style lang='scss'>
-.tabs-wrap{
-	padding:0 20%;
-	display: flex;
-	justify-content:space-around;
-	color:gray;
-	font-size:$uni-font-size-paragraph;
-	.actived{
-		background-image: $gradients-primary;
-		background-size: 100% 10rpx;
+<style scoped lang="scss">
+	.video-list {
+		height: calc(100vh - 90rpx - 90rpx);
+
+		::v-deep .uni-scroll-view-content {
+			display: block;
+		}
 	}
-}
 </style>

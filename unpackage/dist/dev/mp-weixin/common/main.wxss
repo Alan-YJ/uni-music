@@ -27,12 +27,12 @@
 /*每个页面公共css */
 @font-face {
   font-family: 'iconfont';  /* project id 1900025 */
-  src: url('//at.alicdn.com/t/font_1900025_eks2o6yl5yw.eot');
-  src: url('//at.alicdn.com/t/font_1900025_eks2o6yl5yw.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1900025_eks2o6yl5yw.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1900025_eks2o6yl5yw.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1900025_eks2o6yl5yw.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1900025_eks2o6yl5yw.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1900025_3bqczaqssa.eot');
+  src: url('//at.alicdn.com/t/font_1900025_3bqczaqssa.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1900025_3bqczaqssa.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1900025_3bqczaqssa.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1900025_3bqczaqssa.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1900025_3bqczaqssa.svg#iconfont') format('svg');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -40,6 +40,42 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.iconyuyin2:before {
+  content: "\e685";
+}
+.iconmore-:before {
+  content: "\e686";
+}
+.iconreply-:before {
+  content: "\e687";
+}
+.iconxx1:before {
+  content: "\e688";
+}
+.iconsuo1:before {
+  content: "\e689";
+}
+.icondingdan-:before {
+  content: "\e68a";
+}
+.icondengdai:before {
+  content: "\e68b";
+}
+.iconyigoukecheng:before {
+  content: "\e68c";
+}
+.iconbrankcard:before {
+  content: "\e68d";
+}
+.iconqianbao1:before {
+  content: "\e68e";
+}
+.iconshezhi2:before {
+  content: "\e68f";
+}
+.iconjinrujiantou1:before {
+  content: "\e690";
 }
 .iconbofang1:before {
   content: "\e682";
@@ -531,14 +567,12 @@
   content: "\e666";
 }
 page {
-  background-color: #ededed;
+  background-color: #efefef;
   font-family: Roboto Mono, Monaco, courier, monospace, "微软雅黑";
   font-size: 12px;
 }
 page > view {
   box-sizing: border-box;
-  padding-left: 10rpx;
-  padding-right: 10rpx;
 }
 .content-section {
   background-color: white;
@@ -599,5 +633,15 @@ page > view {
 .iconfont {
 
   font-size: 24rpx;
+}
+.divider {
+  border-color: #efefef;
+  border-width: 1rpx;
+  border-style: solid;
+}
+.text-nowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 

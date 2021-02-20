@@ -197,8 +197,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _index = __webpack_require__(/*! @/apis/homepage/index.js */ 21);
-var _index2 = __webpack_require__(/*! @/untils/index */ 23);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var PlatList = function PlatList() {__webpack_require__.e(/*! require.ensure | components/PlayListFunctional */ "components/PlayListFunctional").then((function () {return resolve(__webpack_require__(/*! @/components/PlayListFunctional.vue */ 50));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var RadiusLink = function RadiusLink() {__webpack_require__.e(/*! require.ensure | components/RadiusLink */ "components/RadiusLink").then((function () {return resolve(__webpack_require__(/*! @/components/RadiusLink.vue */ 55));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var RecommendPlayList = function RecommendPlayList() {__webpack_require__.e(/*! require.ensure | pages/index/components/RecommendPlayList */ "pages/index/components/RecommendPlayList").then((function () {return resolve(__webpack_require__(/*! ./components/RecommendPlayList.vue */ 62));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var SongListAlign = function SongListAlign() {__webpack_require__.e(/*! require.ensure | pages/index/components/SongListAlign */ "pages/index/components/SongListAlign").then((function () {return resolve(__webpack_require__(/*! ./components/SongListAlign.vue */ 67));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+var _index2 = __webpack_require__(/*! @/untils/index */ 23);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var PlatList = function PlatList() {__webpack_require__.e(/*! require.ensure | components/PlayListFunctional */ "components/PlayListFunctional").then((function () {return resolve(__webpack_require__(/*! @/components/PlayListFunctional.vue */ 52));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var RadiusLink = function RadiusLink() {__webpack_require__.e(/*! require.ensure | components/RadiusLink */ "components/RadiusLink").then((function () {return resolve(__webpack_require__(/*! @/components/RadiusLink.vue */ 57));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var RecommendPlayList = function RecommendPlayList() {__webpack_require__.e(/*! require.ensure | pages/index/components/RecommendPlayList */ "pages/index/components/RecommendPlayList").then((function () {return resolve(__webpack_require__(/*! ./components/RecommendPlayList.vue */ 64));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var SongListAlign = function SongListAlign() {__webpack_require__.e(/*! require.ensure | pages/index/components/SongListAlign */ "pages/index/components/SongListAlign").then((function () {return resolve(__webpack_require__(/*! ./components/SongListAlign.vue */ 69));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
 
 
 
@@ -214,8 +220,7 @@ var _index2 = __webpack_require__(/*! @/untils/index */ 23);function _interopReq
     return {
       bannerList: [],
       recommendList: [],
-      iconLinkList: [
-      {
+      iconLinkList: [{
         icon: "../../static/icon/icon-tj.png",
         title: "每日推荐",
         url: "" },
@@ -269,7 +274,7 @@ var _index2 = __webpack_require__(/*! @/untils/index */ 23);function _interopReq
                     _this2.bannerList = res.data.blocks[0].extInfo.banners;
                     _this2.songListData = res.data.blocks[2];
                     _this2.$nextTick(function () {
-                      _this2.initBannerHeight(".image");
+                      _this2.initBannerHeight(".swiper-image");
                     });
                   }));case 2:case "end":return _context.stop();}}}, _callee);}))();
     },
@@ -290,7 +295,7 @@ var _index2 = __webpack_require__(/*! @/untils/index */ 23);function _interopReq
           if (!res) {
             _this4.initBannerHeight(el);
           } else {
-            if (res[0]) {
+            if (res[0] && res[0].height > 0) {
               _this4.swiperHeight = res[0].height;
             } else {
               _this4.initBannerHeight(el);

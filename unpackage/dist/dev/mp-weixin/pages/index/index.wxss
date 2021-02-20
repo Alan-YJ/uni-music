@@ -38,6 +38,8 @@
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
 }
 .banner-wrap {
   width: 100%;
@@ -101,5 +103,6 @@
 .icon-link-wrap .icon-item .title {
   font-size: 24rpx;
   margin-top: 10rpx;
+  white-space: nowrap;
 }
 
