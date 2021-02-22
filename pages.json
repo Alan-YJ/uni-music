@@ -19,7 +19,6 @@
 		{
 			"path": "pages/video/play",
 			"style": {
-				"enablePullDownRefresh": false,
 				"app-plus": {
 					"titleNView": false
 				}

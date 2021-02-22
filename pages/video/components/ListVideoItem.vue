@@ -23,8 +23,12 @@
 		},
 		methods:{
 			playVideo(){
+				console.info(this.item.id)
 				getVideoUrl(this.item.id).then(res=>{
-					navigator.url = 'pages/video/play'
+					console.info('request success')
+					uni.navigateTo({
+						url: `/pages/video/play?id=${this.item.id}`
+					})
 				})
 			}
 		}

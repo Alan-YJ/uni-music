@@ -2,7 +2,7 @@
 	<view class='video-page'>
 		<view class="tabs-wrap">
 			<view class='tabs'>
-				<view class='tab-header' :class='active == 1?"actived":""'>听听</view>
+				<view class='tab-header' :class='active == 1?"actived":""'>视频</view>
 				<view class='tab-header' :class='active == 2?"actived":""'>推荐</view>
 				<view class='tab-header' :class='active == 3?"actived":""'>分类</view>
 			</view>
@@ -10,16 +10,16 @@
 		</view>
 		<view class="tab-content">
 			
-			<recommend-video v-if='active==2'></recommend-video>
+			<recommend-mv v-if='active==2'></recommend-mv>
 		</view>
 	</view>
 </template>
 
 <script>
-	import RecommendVideo from './video.vue'
+	import RecommendMV from './RecommendMV.vue'
 	export default {
 		components:{
-			RecommendVideo
+			"recommend-mv": RecommendMV
 		},
 		data() {
 			return {
