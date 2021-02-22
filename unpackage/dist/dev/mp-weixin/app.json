@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/video/index",
+    "pages/video/play",
     "pages/mine/index",
     "pages/cloud/index",
     "pages/account/index"
@@ -53,5 +54,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap41.json"
 }

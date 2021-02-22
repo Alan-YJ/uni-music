@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/RadiusLink":1,"pages/index/components/SongListAlign":1,"pages/video/video":1,"pages/video/components/ListVideoItem":1};
+/******/ 		var cssChunks = {"components/RadiusLink":1,"pages/index/components/SongListAlign":1,"pages/video/RecommendMV":1,"pages/video/components/ListVideoItem":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/PlayListFunctional":"components/PlayListFunctional","components/RadiusLink":"components/RadiusLink","pages/index/components/RecommendPlayList":"pages/index/components/RecommendPlayList","pages/index/components/SongListAlign":"pages/index/components/SongListAlign","pages/video/video":"pages/video/video","pages/video/components/ListVideoItem":"pages/video/components/ListVideoItem"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/PlayListFunctional":"components/PlayListFunctional","components/RadiusLink":"components/RadiusLink","pages/index/components/RecommendPlayList":"pages/index/components/RecommendPlayList","pages/index/components/SongListAlign":"pages/index/components/SongListAlign","pages/video/RecommendMV":"pages/video/RecommendMV","pages/video/components/ListVideoItem":"pages/video/components/ListVideoItem"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

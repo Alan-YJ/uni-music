@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "recommend-video": "/pages/video/video"
+    "recommend-mv": "/pages/video/RecommendMV"
   }
 }

@@ -1,1 +1,0 @@
-<view class="data-v-db0db646"><view class="videos-wrap data-v-db0db646"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="__i0__" wx:key="id"><view class="data-v-db0db646"><image src="{{item.picUrl}}" mode="aspectFit" class="data-v-db0db646"></image></view></block></view></view>

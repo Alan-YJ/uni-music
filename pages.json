@@ -89,7 +89,7 @@
 		]
 	},
 	"globalStyle": {
-		"navigationBarTextStyle": "#ff2419",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "music-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8",

@@ -30,7 +30,10 @@
 			<view class="article-info"></view>
 			<view class="mv-info"></view>
 			<view class="play-count"></view>
-			<progress percent="" show-info />
+			<div class="progress">
+				<progress stroke-width='2' activeColor='white' backgroundColor='gray' border-radius='10' :percent="playPercent" />
+				<view class="control-pointer" ref='controlPointer'></view>
+			</div>
 			<view class="music-info">
 				<view class="like">
 					<view class="iconfont iconxihuan"></view>
@@ -56,7 +59,7 @@
 				commentList:[],
 				autoplay:true,
 				isPause:false,
-				
+				playPercent:0
 			}
 		},
 		onLoad(option) {
@@ -189,6 +192,22 @@
 					}
 				}
 			}
+			.progress{
+				width:100%;
+				position:relative;
+				.control-pointer{
+					position:absolute;
+					left:-10rpx;
+					top:-10rpx;
+					z-index: 1;
+					background-color:white;
+					width:20rpx;
+					height:20rpx;
+					border-radius: 50%;
+					opacity: .9;
+				}
+			}
+			
 		}
 	}
 </style>

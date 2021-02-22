@@ -1,1 +1,0 @@
-<view class="video-component data-v-3ec61a7e"><view class="video-list data-v-3ec61a7e"><scroll-view scroll-y="true" class="data-v-3ec61a7e"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="__i0__" wx:key="id"><list-video-item vue-id="{{'cc049370-1-'+__i0__}}" item="{{item}}" class="data-v-3ec61a7e" bind:__l="__l"></list-video-item></block></scroll-view></view></view>

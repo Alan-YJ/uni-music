@@ -1,8 +1,0 @@
-
-scroll-view.data-v-3ec61a7e {
-	height: calc(100vh - 90rpx);
-.uni-scroll-view-content {
-		display: block;
-}
-}
-
