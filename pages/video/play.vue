@@ -21,7 +21,20 @@
 				@timeupdate="timeupdate"
 				@click="pauseVideo"
 			></video>
-			<view class="vedio-opera"></view>
+			<view class="vedio-opera">
+				<view class="like">
+					<view class="iconfont icondianzan"></view>
+				</view>
+				<view class='comment'>
+					<view class="iconfont iconxinxi"></view>
+				</view>
+				<view class="share">
+					<view class="iconfont iconfenxiang"></view>
+				</view>
+				<view class="collect">
+					<view class="iconfont iconshoucang"></view>
+				</view>
+			</view>
 			<view class="play-btn" v-show="isPause" @click="pauseVideo"><view class="iconfont iconbofang1"></view></view>
 		</view>
 		<view class="footer">
@@ -187,6 +200,11 @@ export default {
 			.iconfont {
 				font-size: calc(375rpx * 0.6);
 			}
+		}
+		.vedio-opera{
+			position:absolute;
+			right:20rpx;
+			z-index: 1;
 		}
 	}
 	.footer {
