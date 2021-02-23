@@ -23,23 +23,27 @@
 			></video>
 			<view class="vedio-opera">
 				<view class="like">
-					<view class="iconfont icondianzan"></view>
+					<view class="iconfont icondianzan" :class='info.liked?"actived":""'></view>
+					<text>{{info.likedCount}}</text>
 				</view>
 				<view class='comment'>
 					<view class="iconfont iconxinxi"></view>
+					<text>{{info.commentCount}}</text>
 				</view>
-				<view class="share">
+				<view class="share" @click='shareItem'>
 					<view class="iconfont iconfenxiang"></view>
+					<text>{{info.shareCount}}</text>
 				</view>
 				<view class="collect">
-					<view class="iconfont iconshoucang"></view>
+					<view class="iconfont iconshoucang" :class='info.liked?"actived":""'></view>
+					<text>{{info.}}</text>
 				</view>
 			</view>
 			<view class="play-btn" v-show="isPause" @click="pauseVideo"><view class="iconfont iconbofang1"></view></view>
 		</view>
 		<view class="footer">
 			<view class="artist-info">
-				<image class="artist-header" :src="info.artists && info.artists[0] ? info.artists[0].img1v1Url : ''" mode="aspectFill"></image>
+				<image class="artist-header" :src="artistInfo.user?artistInfo.user.avatarUrl:''" mode="aspectFill"></image>
 				<text class="artist-name">{{ info.artists && info.artists[0] ? info.artists[0].name : '' }}</text>
 				<text class="iconfont iconanonymous-iconfont"></text>
 			</view>
@@ -48,7 +52,7 @@
 					<text>{{ info.name }}</text>
 					<text class="iconfont iconarrowdown" v-show="!showDetail"></text>
 					<text class="iconfont iconarrowup" v-show="showDetail"></text>
-					<!-- <view>{{info.}}</view> -->
+					<view v-show='showDetail'>{{info.desc}}</view>
 				</view>
 			</view>
 			<view class="play-count">{{ traceCount(info.playCount) }}次观看</view>
@@ -70,13 +74,15 @@
 
 <script>
 import { traceCount } from '@/untils/index.js';
-import { getVideoUrl, getVideoInfo } from '@/apis/videopage/index.js';
+import { getArtistById } from '@/apis/artist.js'
+import { getVideoUrl, getVideoInfo, getVideoDetail } from '@/apis/videopage/index.js';
 export default {
 	data() {
 		return {
 			option: {},
 			url: '',
 			info: {},
+			artistInfo:{},
 			commentList: [],
 			autoplay: true,
 			isPause: false,
@@ -114,7 +120,8 @@ export default {
 	},
 	methods: {
 		loadVideo(id) {
-			Promise.all([this.loadUrl(id), this.loadInfo(id)]).then(res => {
+			Promise.all([this.loadUrl(id), this.loadInfo(id), this.loadDetail(id)]).then(res => {
+				this.loadArtist(this.info.artistId)
 				console.info('load success');
 				this.videoContext = uni.createVideoContext('videoId');
 				this.timerSecond = this.info.duration / 1000;
@@ -125,10 +132,20 @@ export default {
 				this.url = res.data.url;
 			});
 		},
-		loadInfo(id) {
-			return getVideoInfo(id).then(res => {
+		loadDetail(id) {
+			return getVideoDetail(id).then(res => {
 				Object.assign(this.info, res.data);
 			});
+		},
+		loadInfo(id){
+			return getVideoInfo(id).then(res=>{
+				Object.assign(this.info, res)
+			})
+		},
+		loadArtist(id){
+			return getArtistById(id).then(res=>{
+				Object.assign(this.artistInfo, res.data)
+			})
 		},
 		timeupdate(e) {
 			let dom = this.$refs.controlPointer;
@@ -143,7 +160,12 @@ export default {
 			console.info('dom', dom);
 		},
 		//获取评论
-		loadComment() {},
+		loadComment() {
+			console.info('load comment')
+		},
+		shareItem(){
+			console.info('share item')
+		},
 		pauseVideo() {
 			this.isPause = !this.isPause;
 		},
@@ -187,6 +209,8 @@ export default {
 	}
 	.vedio-content {
 		position: relative;
+		color:white;
+		text-align: center;
 		.play-btn {
 			position: absolute;
 			left: 0;
@@ -205,6 +229,12 @@ export default {
 			position:absolute;
 			right:20rpx;
 			z-index: 1;
+			&>view{
+				padding-bottom:20rpx;
+			}
+		}
+		.actived{
+			color: $primary-color;
 		}
 	}
 	.footer {
