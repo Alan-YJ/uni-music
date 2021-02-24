@@ -1,10 +1,12 @@
 <template>
 	<view class='mine-music-list-component'>
 		<view class="header-links">
-			<view class="link-item" :class="{actived:type==1}">
+			<view class="link-item" :class="{actived:type==1}" @click='setType(1)'>
 				<text>创建歌单</text>
 			</view>
-			<view class="link-item" :class="{actived:type==2}">收藏歌单</view>
+			<view class="link-item" :class="{actived:type==2}" @click='setType(2)'>
+				<text>收藏歌单</text>
+			</view>
 		</view>
 		<mine-created-music-list></mine-created-music-list>
 		<mine-favorites-music-list></mine-favorites-music-list>
@@ -22,6 +24,28 @@
 		data(){
 			return{
 				type:1
+			}
+		},
+		watch:{
+			type(val){
+				let createdDom = document.querySelector('.created-music-list-component')
+				let favoritesDom = document.querySelector('.favorites-music-list-component')
+				if(val==1){
+					uni.pageScrollTo({
+						duration:100,
+						scrollTop: createdDom.offsetTop
+					})
+				}else if(val==2){
+					uni.pageScrollTo({
+						duration:100,
+						scrollTop: favoritesDom.offsetTop
+					})
+				}
+			}
+		},
+		methods:{
+			setType(type){
+				this.type = type
 			}
 		}
 		

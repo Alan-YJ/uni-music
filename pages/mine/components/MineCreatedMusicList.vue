@@ -1,28 +1,73 @@
 <template>
-	<view class='created-music-list-component'>
+	<view class="created-music-list-component music-list">
 		<view class="music-list-header">
-			<text class='title'>创建歌单</text>
-			<view class='icons'>
-				<text class="iconfont"></text>
-				<text class="iconfont"></text>
+			<text class="title">创建歌单</text>
+			<view class="icons">
+				<text class="iconfont iconanonymous-iconfont"></text>
+				<text class="iconfont iconmore-"></text>
 			</view>
 		</view>
 		<view class="music-list-content">
-			
+			<music-list-item></music-list-item>
+			<view class="import-music" @click='importLocalMusic'>
+				<view class="cover"><view class="iconfont iconbendiyinyue36"></view></view>
+				<view class="title">一键导入本地音乐</view>
+			</view>
 		</view>
 	</view>
 </template>
 
 <script>
-	export default {
-		
+import MusicListItem from '@/components/RowMusicListItem.vue'
+export default {
+	components: {
+		MusicListItem
+	},
+	data() {
+		return {
+			list: []
+		};
+	},
+	methods:{
+		importLocalMusic(){
+			console.info('imort local music')
+		}
 	}
+};
 </script>
 
-<style scoped lang='scss'>
-	.created-music-list-component{
-		background-color:white;
-		border-radius: 40rpx;
-		padding:40rpx 0;
+<style scoped lang="scss">
+.created-music-list-component {
+	background-color: white;
+	border-radius: 40rpx;
+	margin-top: 20rpx;
+	.icons {
+		.iconfont {
+			margin-left: 20rpx;
+			font-size: 32rpx;
+		}
 	}
+	.import-music {
+		display: flex;
+		align-items: center;
+		margin-top:20rpx;
+		.cover {
+			width: 90rpx;
+			height: 90rpx;
+			background-color: #ccc;
+			border-radius: 20rpx;
+			.iconfont {
+				color: #555;
+				font-size:60rpx;
+				text-align: center;
+				line-height:90rpx;
+			}
+		}
+		.title {
+			line-height: 90rpx;
+			margin-left: 20rpx;
+			font-size: 28rpx;
+		}
+	}
+}
 </style>

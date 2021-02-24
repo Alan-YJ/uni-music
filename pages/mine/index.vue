@@ -4,6 +4,7 @@
 		<mine-modules @jumpto='jumpto'></mine-modules>
 		<like-music-component></like-music-component>
 		<mine-music-list></mine-music-list>
+		<recommend-music-list></recommend-music-list>
 	</view>
 </template>
 
@@ -12,12 +13,14 @@
 	import MineModules from './components/MineModules.vue'
 	import LikeMusicComponent from './components/LikeMusicComponent.vue'
 	import MineMusicList from './components/MineMusicList.vue'
+	import RecommendMusicList from './components/RecommendMusicList.vue'
 	export default {
 		components:{
 			LoginButton,
 			MineModules,
 			LikeMusicComponent,
-			MineMusicList
+			MineMusicList,
+			RecommendMusicList
 		},
 		data() {
 			return {

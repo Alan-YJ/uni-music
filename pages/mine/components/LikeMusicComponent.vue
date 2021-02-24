@@ -32,7 +32,7 @@ export default {
 	align-items: center;
 	height: 90rpx;
 	.icon-wrap {
-		background-color: gray;
+		background-color: #ccc;
 		width: 90rpx;
 		height: 90rpx;
 		line-height: 90rpx;

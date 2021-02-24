@@ -82,3 +82,26 @@ page>view{
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
+.music-list{
+	padding:40rpx;
+	.music-list-header{
+		display: flex;
+		justify-content: space-between;
+		.title,.icons{
+			color:gray;
+		}
+	}
+	.null-tips{
+		color:gray;
+		line-height: 80rpx;
+	}
+	.music-list-item{
+		margin-top:20rpx;
+		.cover{
+			border-radius: 20rpx;
+			background-color: #ccc;
+		}
+	}
+}
+

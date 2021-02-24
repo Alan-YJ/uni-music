@@ -16,7 +16,7 @@
 
 <style scoped>
 	.radius-btn{
-		padding:7rpx 14rpx 5rpx 16rpx;
+		padding:10rpx 20rpx;
 		border:1px solid rgba(200,200,200,.5);
 		border-radius: 30rpx;
 		display: inline-block;
