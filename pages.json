@@ -32,9 +32,9 @@
 			}
 
 		}, {
-			"path": "pages/cloud/index",
+			"path": "pages/radio/index",
 			"style": {
-				"navigationBarTitleText": "云村",
+				"navigationBarTitleText": "电台",
 				"app-plus": {
 					"titleNView": false
 				}
@@ -75,10 +75,10 @@
 				"text": "我的"
 			},
 			{
-				"pagePath": "pages/cloud/index",
+				"pagePath": "pages/radio/index",
 				"iconPath": "static/icon/t4.png",
 				"selectedIconPath": "static/icon/t4_1.png",
-				"text": "云村"
+				"text": "电台"
 			},
 			{
 				"pagePath": "pages/account/index",

@@ -36,7 +36,6 @@
 				</view>
 				<view class="collect">
 					<view class="iconfont iconshoucang" :class='info.liked?"actived":""'></view>
-					<text>{{info.}}</text>
 				</view>
 			</view>
 			<view class="play-btn" v-show="isPause" @click="pauseVideo"><view class="iconfont iconbofang1"></view></view>
@@ -50,8 +49,8 @@
 			<view class="mv-info" @click="showDetail = !showDetail">
 				<view>
 					<text>{{ info.name }}</text>
-					<text class="iconfont iconarrowdown" v-show="!showDetail"></text>
-					<text class="iconfont iconarrowup" v-show="showDetail"></text>
+					<text class="iconfont iconarrowdown" v-show="info.desc&&!showDetail"></text>
+					<text class="iconfont iconarrowup" v-show="info.desc&&showDetail"></text>
 					<view v-show='showDetail'>{{info.desc}}</view>
 				</view>
 			</view>
