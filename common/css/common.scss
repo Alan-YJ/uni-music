@@ -85,6 +85,26 @@ page>view{
 
 .music-list{
 	padding:40rpx;
+	background-color: white;
+	border-radius: 20rpx;
+	.cover {
+		width: 90rpx;
+		height: 90rpx;
+		background-color: #eee;
+		border-radius: 20rpx;
+		.iconfont {
+			color: #555;
+			font-size:60rpx;
+			text-align: center;
+			line-height:90rpx;
+		}
+	}
+	.icons {
+		.iconfont {
+			margin-left: 20rpx;
+			font-size: 32rpx;
+		}
+	}
 	.music-list-header{
 		display: flex;
 		justify-content: space-between;

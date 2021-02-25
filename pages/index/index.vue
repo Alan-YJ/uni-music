@@ -118,9 +118,19 @@
 					this.bannerList = res.data.blocks[0].extInfo.banners
 					this.songListData = res.data.blocks[2]
 					this.$nextTick(() => {
-						this.initBannerHeight(".swiper-image")
+						this.checkImageLoad()
 					})
 				})
+			},
+			checkImageLoad(){
+				let dom = document.querySelector(".swiper-image img")
+				if(dom&&dom.complete){
+					this.initBannerHeight(".swiper-image img")
+				}else{
+					setTimeout(()=>{
+						this.checkImageLoad()
+					},300)
+				}
 			},
 			async initPlayList() {
 				await getRecommendPlayList().then(res => {

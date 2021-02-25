@@ -7,16 +7,20 @@
 			</view>
 		</view>
 		<view class="content">
-			<grid-music-list-item v-for='item in list' :key='item.id' :item='item' @click='openMusicList(item)'></grid-music-list-item>
+			<grid-music-list-item :showCount='showCount' v-for='item in list' :key='item.id' :item='item' @click='openItemHandler(item)'></grid-music-list-item>
 		</view>
-		<view class="footer">
-			<radius-link text='更多推荐歌单 >' :handler="gotoRecommendMusicList"></radius-link>
+		<view class="footer" v-if='footerBtn||footerBtnText'>
+			<radius-link :handler="footerBtnHandler">
+				<template slot='text'>
+					{{footerBtnText}}
+					<text class="iconfont iconjinrujiantou1"></text>
+				</template>
+			</radius-link>
 		</view>
 	</view>
 </template>
 
 <script>
-	import { getRecommendMusicList } from '@/apis/minepage/index.js'
 	import RadiusLink from '@/components/RadiusLink.vue'
 	import GridMusicListItem from '@/components/GridMusicListItem.vue'
 	export default {
@@ -24,33 +28,27 @@
 			RadiusLink,
 			GridMusicListItem
 		},
+		props:{
+			footerBtn:Boolean,
+			footerBtnText:{
+				type:String
+			},
+			footerBtnHandler:Function,
+			openItemHandler:Function,
+			showCount:{
+				type: Boolean,
+				default: true
+			},
+			list:Array
+		},
 		data(){
 			return{
-				list:[],
-				pagination:{
-					page:1,
-					limit:6
-				}
 			}
 		},
-		mounted(){
-			this.loadList()
-		},
 		methods:{
-			loadList(){
-				return getRecommendMusicList(this.pagination).then(res=>{
-					this.list = res.result
-				})
-			},
-			openMusicList(item){
-				console.info("open music list by id",item.id)
-			},
 			closeRecommend(){
 				console.info('close show recommend music list')
 			},
-			gotoRecommendMusicList(){
-				console.info('goto recommend music list')
-			}
 		}
 	};
 </script>

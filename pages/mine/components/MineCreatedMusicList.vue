@@ -41,28 +41,10 @@ export default {
 	background-color: white;
 	border-radius: 40rpx;
 	margin-top: 20rpx;
-	.icons {
-		.iconfont {
-			margin-left: 20rpx;
-			font-size: 32rpx;
-		}
-	}
 	.import-music {
 		display: flex;
 		align-items: center;
 		margin-top:20rpx;
-		.cover {
-			width: 90rpx;
-			height: 90rpx;
-			background-color: #ccc;
-			border-radius: 20rpx;
-			.iconfont {
-				color: #555;
-				font-size:60rpx;
-				text-align: center;
-				line-height:90rpx;
-			}
-		}
 		.title {
 			line-height: 90rpx;
 			margin-left: 20rpx;

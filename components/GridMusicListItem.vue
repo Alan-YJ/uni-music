@@ -2,7 +2,7 @@
 	<view class='music-list-cover-component' @click='emitClick'>
 		<view class="pic">
 			<image :src="item.picUrl" mode="widthFix"></image>
-			<play-count :value='count'></play-count>
+			<play-count v-if='showCount' :value='count'></play-count>
 		</view>
 		<view class="title">{{item.name}}</view>
 	</view>
@@ -16,7 +16,8 @@
 			'play-count':PlayCount
 		},
 		props:{
-			item: Object
+			item: Object,
+			showCount:Boolean
 		},
 		computed:{
 			count(){
