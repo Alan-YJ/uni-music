@@ -10,12 +10,14 @@
 			</swiper-item>
 		</swiper>
 		<!-- icon链接列表 -->
-		<scroll-view scroll-x='true' enable-flex='true' class='icon-link-wrap' style='display: flex;'>
-			<view class='icon-item' v-for='iconLink in iconLinkList'>
-				<view class="icon">
-					<image class='icon-link' :src='iconLink.icon' mode='aspectFill'></image>
+		<scroll-view scroll-x='true' enable-flex='true' class='icon-link-wrap'>
+			<view class='icon-wrap'>
+				<view class='icon-item' v-for='iconLink in iconLinkList'>
+					<view class="icon">
+						<image class='icon-link' :src='iconLink.icon' mode='aspectFill'></image>
+					</view>
+					<view class='title'>{{iconLink.title}}</view>
 				</view>
-				<view class='title'>{{iconLink.title}}</view>
 			</view>
 		</scroll-view>
 		<view class='play-list-wrap'>
@@ -33,7 +35,7 @@
 				<recommend-play-list :list='recommendList'></recommend-play-list>
 				<!-- #endif -->
 				<!-- #ifndef MP-WEIXIN -->
-				<plat-list :list='recommendList'></plat-list>
+				<play-list :list='recommendList'></play-list>
 				<!-- #endif -->
 			</scroll-view>
 		</view>
@@ -49,7 +51,7 @@
 	import {
 		traceCount
 	} from '@/untils/index'
-	import PlatList from '@/components/PlayListFunctional.vue'
+	import PlayList from '@/components/PlayListFunctional.vue'
 	import RadiusLink from '@/components/RadiusLink.vue'
 	import RecommendPlayList from './components/RecommendPlayList.vue'
 	import SongListAlign from './components/SongListAlign.vue'
@@ -57,7 +59,7 @@
 		components: {
 			RecommendPlayList,
 			SongListAlign,
-			PlatList,
+			PlayList,
 			RadiusLink
 		},
 		data() {
@@ -202,12 +204,14 @@
 		height: 200rpx;
 		display: flex;
 		border-bottom: 1rpx solid #dedede;
-
+		.icon-wrap{
+			width: calc(7 * 160rpx);
+		}
 		.icon-item {
 			width: 100rpx;
 			padding: 30rpx;
 			text-align: center;
-
+			display: inline-block;
 			.icon {
 				width: 100rpx;
 				height: 100rpx;

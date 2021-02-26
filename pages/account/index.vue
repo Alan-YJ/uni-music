@@ -17,6 +17,7 @@
 				<view>手机电脑多端同步，尽享海量高品质音乐</view>
 				<button class='login-btn'>立即登录</button>
 			</view>
+			<tools-component></tools-component>
 		</scroll-view>
 		<!-- #ifdef H5 -->
 		<scan ref='scan' @success='getScanCode'></scan>
@@ -26,9 +27,11 @@
 
 <script>
 	import Scan from '@/components/Scan.vue'
+	import ToolsComponent from './components/ToolsComponent.vue'
 	export default {
 		components:{
-			Scan
+			Scan,
+			ToolsComponent
 		},
 		data() {
 			return {
@@ -99,9 +102,10 @@
 			line-height:60rpx;
 			.login-btn{
 				margin-top:20rpx;
+				border-radius: 90rpx;
 				width:100%;
 				&::after{
-					border-radius: 90rpx;;
+					border-radius: 90rpx;
 				}
 			}
 		}
