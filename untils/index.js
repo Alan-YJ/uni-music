@@ -8,4 +8,17 @@ export function traceCount(count){
 	count
 }
 
+//写入localStorage
+export function setStorage(key, data){
+	window.setStorage(key, type(data) === 'string'? data : JSON.stringify(data))
+}
 
+//读取localStorage
+export function loadStorage(key){
+	let result = window.loadStorage(key)
+	if(result.indexOf('[')> -1 || result.indexOf('{') > -1){
+		return JSON.parse(result)
+	}else{
+		return result
+	}
+}

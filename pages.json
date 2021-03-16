@@ -51,6 +51,30 @@
 			}
 		}
 	],
+	"subPackages":[
+		{
+			"root":"pages/subpages",
+			"pages":[
+				{
+					"path":"album/index",
+					"style":{
+						"navigationBarTitleText":"歌单",
+						"app-plus":{
+							"titleNView":false
+						}
+					}
+				},{
+					"path":"search/index",
+					"style":{
+						"navigationBarTitleText":"搜索",
+						"app-plus":{
+							"titleNView":false
+						}
+					}
+				}
+			]
+		}
+	],
 	"tabBar": {
 		"color": "#888",
 		"selectedColor": "#ff2419",

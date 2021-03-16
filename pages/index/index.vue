@@ -1,5 +1,6 @@
 <template>
 	<view class="content">
+		<search-component></search-component>
 		<swiper class='banner-wrap' indicator-dots="true" autoplay="true" circular='true' duration="300"
 		 indicator-active-color="#ff2419" :style="{height:swiperHeight+'px'}">
 			<swiper-item v-for='swiper in bannerList' :item-id="swiper.index">
@@ -51,6 +52,7 @@
 	import {
 		traceCount
 	} from '@/untils/index'
+	import SearchComponent from '@/components/Search.vue'
 	import PlayList from '@/components/PlayListFunctional.vue'
 	import RadiusLink from '@/components/RadiusLink.vue'
 	import RecommendPlayList from './components/RecommendPlayList.vue'
@@ -60,7 +62,8 @@
 			RecommendPlayList,
 			SongListAlign,
 			PlayList,
-			RadiusLink
+			RadiusLink,
+			SearchComponent
 		},
 		data() {
 			return {
