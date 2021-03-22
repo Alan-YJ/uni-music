@@ -1,6 +1,6 @@
 <template>
 	<view class='wrap'>
-		<view class="iconfont iconchangyongicon-1"></view>
+		<view class="iconfont iconchangyongicon-1" @click="back"></view>
 		<input type="text" v-model='keyword' @input='loadWordList' class='search-input' @keydown.enter='search' :placeholder='placeholder'/>
 	</view>
 </template>
@@ -19,6 +19,9 @@
 			this.loadKeyword()
 		},
 		methods:{
+			back(){
+				uni.navigateBack({})
+			},
 			loadKeyword(){
 				return getDefaultKeyword().then(res=>{
 					this.placeholder = res.data.realkeyword

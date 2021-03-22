@@ -72,7 +72,14 @@
 						}
 					}
 				}
-			]
+			    ,{
+                    "path" : "login/login",
+                    "style" :{
+						"navigationBarTitleText": "登录",
+						"enablePullDownRefresh": false
+					}
+                }
+            ]
 		}
 	],
 	"tabBar": {

@@ -24,6 +24,7 @@
 		}
 		.iconfont{
 			margin-left:15rpx;
+			font-size:24rpx;
 		}
 	}
 </style>

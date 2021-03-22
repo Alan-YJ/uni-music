@@ -1,7 +1,24 @@
+*{
+	text-size-adjust:100%;
+	-webkit-tap-highlight-color:transparent;
+	//识别br和\n处理为换行
+	// white-space: pre-line; 
+}
+
 page{
 	background-color:$gray-color; 
 	font-family: $primary-font-family;
-	font-size:12px;
+	font-size: calc(100vw / 375);
+	//禁止屏幕抖动
+	padding-right:calc(100vw -100%);
+	.desc{
+		font-size: calc(100vw / 500);
+	}
+}
+
+input{
+	//移动端input垂直居中
+	line-height:normal;
 }
 
 page>view{
@@ -61,7 +78,7 @@ page>view{
 	font-size:24rpx;
 	/* #endif */
 	/* #ifndef MP-WEIXIN */
-	font-size:12rpx;
+	font-size:60rpx;
 	/* #endif */
 }
 

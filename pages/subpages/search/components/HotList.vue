@@ -82,6 +82,11 @@
 			font-size:36rpx;
 			line-height:70rpx;
 		}
+		.btn{
+			.iconfont{
+				font-size:36rpx;
+			}
+		}
 	}
 	.content{
 		display: grid;
