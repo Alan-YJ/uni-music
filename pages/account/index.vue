@@ -11,14 +11,32 @@
 				<view class="iconfont iconzhuzhuang"></view>
 			</view>
 		</view>
-		<scroll-view scroll-y="true" class='page-content' @scroll="scroll" :scroll-top='scrollTop'>
+		<scroll-view v-if='!hasLogin' scroll-y="true" class='page-content' @scroll="scroll" :scroll-top='scrollTop'>
 			<view class='login-tips'>
 				<view>登录云音乐</view>
 				<view>手机电脑多端同步，尽享海量高品质音乐</view>
-				<button class='login-btn'>立即登录</button>
+				<button class='login-btn' @click='login'>立即登录</button>
 			</view>
 			<tools-component></tools-component>
 		</scroll-view>
+		<view class="user-info" v-else>
+			<view class="avatar-wrap">
+				<view class="avatar"></view>
+				<view class="nick-name-wrap">
+					<view class="nick-name"></view>
+					<view class="level"></view>
+				</view>
+			</view>
+			<view class="sign">
+				
+			</view>
+		</view>
+		<view class="data-list">
+			<view class="dynamic info-item"></view>
+			<view class="follow info-item"></view>
+			<view class="fans info-item"></view>
+			<view class="edit info-item"></view>
+		</view>
 		<!-- #ifdef H5 -->
 		<scan ref='scan' @success='getScanCode'></scan>
 		<!-- #endif -->
@@ -38,6 +56,11 @@
 				scrollTop:0,
 				title:"",
 				isShowScan:false,
+			}
+		},
+		computed:{
+			hasLogin(){
+				return this.$store.state.userInfo.hasLogin
 			}
 		},
 		methods: {
@@ -65,6 +88,11 @@
 				uni.showToast({
 					icon:'none',
 					title:'扫码成功'
+				})
+			},
+			login(){
+				uni.navigateTo({
+					url:"/pages/subpages/login/login"
 				})
 			}
 		}

@@ -1,7 +1,12 @@
 <script>
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			this.$store.dispatch('checkLogin').then(res=>{
+				console.info(res)
+				if(res.code == 200 && res.profile){
+					this.$store.dispatch('refreshLogin')
+				}
+			})
 		},
 		onShow: function() {
 			console.log('App Show')

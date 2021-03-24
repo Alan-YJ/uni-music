@@ -1,5 +1,6 @@
 
 export const baseUrl = process.env.NODE_ENV === 'development'? "http://localhost:3000":"http://192.168.45.117:3000"
+import store from '@/store/index.js'
 
 //GET Method
 export function getData(url, params, fn){
@@ -7,6 +8,9 @@ export function getData(url, params, fn){
 		uni.request({
 			url: baseUrl + url,
 			data: params,
+			// header:{
+			// 	token:store.state.userInfo.token
+			// },
 			success(res){
 				resolve(res.data)
 			},

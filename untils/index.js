@@ -10,7 +10,7 @@ export function traceCount(count){
 
 //写入localStorage
 export function setStorage(key, data){
-	window.setStorage(key, type(data) === 'string'? data : JSON.stringify(data))
+	uni.setStorageSync(key, typeof(data) === 'string'? data : JSON.stringify(data))
 }
 
 //读取localStorage
