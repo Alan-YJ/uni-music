@@ -78,7 +78,14 @@
 						"navigationBarTitleText": "登录",
 						"enablePullDownRefresh": false
 					}
-                }
+                },
+			    ,{
+                    "path" : "play/index",
+                    "style" :{
+						"navigationBarTitleText": "播放",
+						"enablePullDownRefresh": false
+					}
+                },
             ]
 		}
 	],
