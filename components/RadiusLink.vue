@@ -19,6 +19,9 @@
 		padding:5rpx 20rpx;
 		position: relative;
 		vertical-align: middle;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		&:active{
 			background-color:rgba(200,200,200,.5);
 		}

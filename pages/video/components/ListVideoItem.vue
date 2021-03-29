@@ -5,7 +5,7 @@
 		<view class="divider divider-horizontal"></view>
 		<view class="artists-info">
 			<view class="name">{{item.artistName}}</view>
-			<view class='iconfont iconmore-'></view>
+			<view class='iconfont iconmore- iconfont-small'></view>
 		</view>
 	</view>
 </template>

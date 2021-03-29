@@ -3,7 +3,7 @@
 		<view class="header">
 			<view class="title">为你推荐</view>
 			<view class="icon" @click='closeRecommend'>
-				<text class="iconfont iconguanbijiantou"></text>
+				<text class="iconfont iconguanbijiantou iconfont-small"></text>
 			</view>
 		</view>
 		<view class="content">
@@ -12,8 +12,8 @@
 		<view class="footer" v-if='footerBtn||footerBtnText'>
 			<radius-link :handler="footerBtnHandler">
 				<template slot='text'>
-					{{footerBtnText}}
-					<text class="iconfont iconjinrujiantou1"></text>
+					<text style='margin-right:10rpx;'>{{footerBtnText}}</text>
+					<text class="iconfont iconjinrujiantou1 iconfont-small"></text>
 				</template>
 			</radius-link>
 		</view>
@@ -62,12 +62,18 @@
 		font-weight: 700;
 		margin-bottom:20rpx;
 		.icon{
-			width:50rpx;
-			height:50rpx;
-			border-radius: 50%;
 			text-align: center;
-			line-height:50rpx;
-			background-color:#ddd;
+			.iconfont{				
+				border-radius: 50%;
+				background-color:#ddd;
+				padding:10rpx;
+			}
+			&:active{
+				.iconfont{
+					background-color:rgba(220,220,220,.5);
+					color:red;
+				}
+			}
 		}
 	}
 	.content{
@@ -79,6 +85,9 @@
 	.footer{
 		margin-top:20rpx;
 		text-align: center;
+		.radius-btn{
+			padding:10rpx 20rpx;
+		}
 	}
 }
 </style>

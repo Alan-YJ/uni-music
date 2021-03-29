@@ -2,7 +2,7 @@
 	<view class='login-btn'>
 		<view class="iconfont icontouxiang login-icon"></view>
 		<text>立即登录</text>
-		<text>></text>
+		<text class="iconfont iconjinrujiantou1 iconfont-small"></text>
 	</view>
 </template>
 

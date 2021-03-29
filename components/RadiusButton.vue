@@ -23,6 +23,8 @@
 		text-align:center;
 		font-size:36rpx;
 		padding:20rpx 0;
+		display: flex;
+		align-items: center;
 		&:active{
 			background-color: #d42118;
 		}

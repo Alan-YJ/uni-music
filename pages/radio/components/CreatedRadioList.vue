@@ -10,7 +10,7 @@
 			<music-list-item></music-list-item>
 			<view class="create-music-list" @click='createRadioList'>
 				<view class="cover">
-					<view class="iconfont iconanonymous-iconfont"></view>
+					<view class="iconfont iconadd"></view>
 				</view>
 				<view class="title">创建新的播单</view>
 			</view>

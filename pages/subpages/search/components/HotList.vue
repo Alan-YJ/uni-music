@@ -5,7 +5,7 @@
 			<view class="btn">
 				<radius-link :handler="playList">
 					<text slot='text'>
-						<text class="iconfont iconbofang1"></text>
+						<text class="iconfont iconbofang1 iconfont-small"></text>
 						播放
 					</text>
 				</radius-link>
@@ -72,55 +72,59 @@
 	}
 </script>
 
-<style lang='scss' scoped>
-	.header{
-		margin-top:20rpx;
-		display: flex;
-		justify-content: space-between;
-		.title{
-			font-weight: 700;
-			font-size:36rpx;
-			line-height:70rpx;
-		}
-		.btn{
-			.iconfont{
-				font-size:36rpx;
-			}
-		}
-	}
-	.content{
-		display: grid;
-		font-size:32rpx;
-		line-height:90rpx;
-		grid-template-columns: 50% 50%;
-		grid-column-gap: 20rpx;
-		max-width: 100%;
-		.item{
+<style lang='scss'>
+	.hot-list-component{
+		.header{
+			margin-top:20rpx;
 			display: flex;
-			&.hot{
+			justify-content: space-between;
+			.title{
 				font-weight: 700;
+				font-size:36rpx;
+				line-height:70rpx;
 			}
-			&:active{
-				background-color:#C0C0C0;
-			}
-			.index{
-				margin-right:20rpx;
-				&.hot{
-					color: $primary-color;
+			.btn{
+				display: flex;
+				align-items: center;
+				.radius-btn{
+					padding:10rpx 20rpx;
 				}
 			}
-			.word{
-				margin-right:10rpx;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				max-width: calc(100% - 2rem - 20rpx - 32rpx);
-			}
-			.icon{
-				display: inline-block;
-				image{
-					width:2rem;
-					height:32rpx;
+		}
+		.content{
+			display: grid;
+			font-size:32rpx;
+			line-height:90rpx;
+			grid-template-columns: 50% 50%;
+			grid-column-gap: 20rpx;
+			max-width: 100%;
+			.item{
+				display: flex;
+				&.hot{
+					font-weight: 700;
+				}
+				&:active{
+					background-color:#C0C0C0;
+				}
+				.index{
+					margin-right:20rpx;
+					&.hot{
+						color: $primary-color;
+					}
+				}
+				.word{
+					margin-right:10rpx;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					max-width: calc(100% - 2rem - 20rpx - 32rpx);
+				}
+				.icon{
+					display: inline-block;
+					image{
+						width:2rem;
+						height:32rpx;
+					}
 				}
 			}
 		}

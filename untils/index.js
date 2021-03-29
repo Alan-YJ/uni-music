@@ -1,4 +1,4 @@
-
+import { ifDefPlatform } from './platform/index.js'
 
 export function traceCount(count){
 	return Number.parseInt(count) / 10**8 > 1 ? 
@@ -21,4 +21,9 @@ export function loadStorage(key){
 	}else{
 		return result
 	}
+}
+
+//获取平台类型
+export function getPlayform(){
+	return ifDefPlatform()
 }

@@ -48,7 +48,7 @@
 			</view>
 			<view class="mv-info" @click="showDetail = !showDetail">
 				<view>
-					<text>{{ info.name }}</text>
+					<text style='margin-right:15rpx;'>{{ info.name }}</text>
 					<text class="iconfont iconarrowdown" v-show="info.desc&&!showDetail"></text>
 					<text class="iconfont iconarrowup" v-show="info.desc&&showDetail"></text>
 					<view v-show='showDetail'>{{info.desc}}</view>
@@ -60,7 +60,9 @@
 				<view class="control-pointer" ref="controlPointer"></view>
 			</div>
 			<view class="music-info">
-				<view class="like"><view class="iconfont iconxihuan"></view></view>
+				<view class="like">
+					<view class="iconfont iconxihuan"></view>
+				</view>
 				<view class="m-music">
 					<text class="iconfont iconyinfu"></text>
 					<text class="name">{{ info.name }}</text>

@@ -1,12 +1,14 @@
 <template>
 	<view class="like-music-list-component">
-		<view class="icon-wrap"><view class="iconfont iconLikexihuan"></view></view>
+		<view class="icon-wrap">
+			<view class="iconfont iconLikexihuan"></view>
+		</view>
 		<view class="title">
 			<view class="name">我喜欢的音乐</view>
 			<view class="count">{{ list.length }}首</view>
 		</view>
 		<view class="heart-btn">
-			<text class="iconfont iconxindong"></text>
+			<text class="iconfont iconxindong iconfont-small"></text>
 			<text>心动模式</text>
 		</view>
 	</view>
@@ -43,7 +45,6 @@ export default {
 		align-content: center;
 		align-self: center;
 		.iconfont {
-			font-size: 40rpx;
 			color: white;
 		}
 	}

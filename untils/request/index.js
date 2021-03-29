@@ -1,5 +1,5 @@
 
-export const baseUrl = process.env.NODE_ENV === 'development'? "http://localhost:3000":"http://192.168.45.117:3000"
+export const baseUrl = process.env.NODE_ENV === 'development'? "http://localhost:3000":"/api"
 import store from '@/store/index.js'
 
 //GET Method

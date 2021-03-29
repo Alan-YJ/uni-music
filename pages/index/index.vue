@@ -5,7 +5,7 @@
 		 indicator-active-color="#ff2419" :style="{height:swiperHeight+'px'}">
 			<swiper-item v-for='swiper in bannerList' :item-id="swiper.index">
 				<navigator :url='swiper.url'>
-					<image class='swiper-image' :src="swiper.pic.replace('http:','https:')" mode="widthFix"></image>
+					<image class='swiper-image' :src="swiper.imageUrl" mode="widthFix"></image>
 					<view class='title'>{{swiper.typeTitle}}</view>
 				</navigator>
 			</swiper-item>
@@ -13,12 +13,12 @@
 		<!-- icon链接列表 -->
 		<scroll-view scroll-x='true' enable-flex='true' class='icon-link-wrap'>
 			<view class='icon-wrap'>
-				<view class='icon-item' v-for='iconLink in iconLinkList'>
+				<a :href='iconLink.url' class='icon-item icon-link' v-for='iconLink in iconLinkList'>
 					<view class="icon">
-						<image class='icon-link' :src='iconLink.icon' mode='aspectFill'></image>
+						<image class='icon-link' :src='iconLink.iconUrl' mode='aspectFill'></image>
 					</view>
-					<view class='title'>{{iconLink.title}}</view>
-				</view>
+					<view class='title'>{{iconLink.name}}</view>
+				</a>
 			</view>
 		</scroll-view>
 		<view class='play-list-wrap'>
@@ -26,7 +26,8 @@
 				<text class='play-list-title'>推荐歌单</text>
 				<radius-link>
 					<template #text>
-						更多>
+						<text>更多</text>
+						<text class="iconfont iconyoujiantou_huaban iconfont-small"></text>
 					</template>
 				</radius-link>
 			</view>
@@ -40,14 +41,14 @@
 				<!-- #endif -->
 			</scroll-view>
 		</view>
-		<!-- <song-list-align :data-source='songListData' v-if='songListData'></song-list-align> -->
 	</view>
 </template>
 
 <script>
 	import {
 		getHomeBanners,
-		getRecommendPlayList
+		getRecommendPlayList,
+		getDragonBalls
 	} from '@/apis/homepage/index.js'
 	import {
 		traceCount
@@ -69,50 +70,14 @@
 			return {
 				bannerList: [],
 				recommendList: [],
-				iconLinkList: [{
-						icon: "../../static/icon/icon-tj.png",
-						title: "每日推荐",
-						url: ""
-					},
-					{
-						icon: "../../static/icon/icon-dt.png",
-						title: "私人FM",
-						url: ""
-					},
-					{
-						icon: "../../static/icon/icon-gd.png",
-						title: "歌单",
-						url: ""
-					},
-					{
-						icon: "../../static/icon/icon-rank.png",
-						title: "排行榜",
-						url: ""
-					},
-					{
-						icon: "../../static/icon/icon-zb.png",
-						title: "直播",
-						url: ""
-					},
-					{
-						icon: "../../static/icon/icon-zj.png",
-						title: "数字专辑",
-						url: ""
-					},
-					{
-						icon: "../../static/icon/icon-fj.png",
-						title: "歌房",
-						url: ""
-					},
-				],
-				songListData: [],
+				iconLinkList: [],
 				loading: false,
 				swiperHeight: 0
 			}
 		},
 		onLoad() {
 			this.loading = true
-			Promise.all([this.initBannerList(), this.initPlayList()]).then(() => {
+			Promise.all([this.initBannerList(), this.getDragonBalls(), this.initPlayList()]).then(() => {
 				this.loading = false
 			})
 
@@ -120,11 +85,15 @@
 		methods: {
 			async initBannerList() {
 				await getHomeBanners().then(res => {
-					this.bannerList = res.data.blocks[0].extInfo.banners
-					this.songListData = res.data.blocks[2]
+					this.bannerList = res.banners
 					this.$nextTick(() => {
 						this.checkImageLoad()
 					})
+				})
+			},
+			async getDragonBalls() {
+				await getDragonBalls().then(res => {
+					this.iconLinkList = res.data
 				})
 			},
 			checkImageLoad(){
@@ -238,6 +207,10 @@
 				margin-top: 10rpx;
 				white-space: nowrap;
 			}
+		}
+		a{	
+			text-decoration: none;	
+			color: inherit;
 		}
 	}
 </style>
