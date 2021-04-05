@@ -27,3 +27,9 @@ export function loadStorage(key){
 export function getPlayform(){
 	return ifDefPlatform()
 }
+
+export const PlayType = {
+	Random:'random',
+	Single:'single',
+	List:'list'
+}

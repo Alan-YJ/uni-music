@@ -18,7 +18,7 @@
 					</view>
 				</template>
 			</uni-list-item>
-			<uni-list-item clickable :border='false' :key='item.id' v-for='(item, index) in list' class='playItem' :note="item.ar.map(a=>a.name).join('/')+' - '+item.al.name">
+			<uni-list-item clickable :border='false' :key='item.id' v-for='(item, index) in list' class='playItem' :note="item.ar.map(a=>a.name).join('/')+' - '+item.al.name" @click="openList(index, item)">
 				<template slot='header'>
 					<view class="index">{{index+1}}</view>
 				</template>
@@ -50,6 +50,35 @@
 	export default {
 		props:{
 			list:Array
+		},
+		computed:{
+			songs:{
+				get(){
+					return this.$store.state.songs
+				},
+				set(val){
+					this.$store.commit('setSongs', val)
+				}
+			},
+			index:{
+				get(){
+					return this.$store.state.index
+				},
+				set(val){
+					this.$store.commit('setIndex', val)
+				}
+			}
+		},
+		methods:{
+			openList(index, item){
+				this.index = index
+				this.songs = this.list
+				uni.navigateTo({
+					url:"/pages/subpages/play/index?"+"id="+this.list.map(item=>{
+						return item.id
+					})
+				})
+			}
 		}
 	}
 </script>
